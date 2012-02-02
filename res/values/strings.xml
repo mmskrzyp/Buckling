@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World, BucklingActivity!</string>
     <string name="app_name">Buckling</string>
+    <string name="learn_about_buckling_beam">Learn about buckling beam</string>
+    <string name="calculate_the_critical_force_for_the_beam">Calculate the critical force for the beam</string>
+    <string name="_1_select_the_type_of_fastening_the_beam_">1) Select the type of fastening the beam:</string>
+    <string name="select">Select</string>
+    <string name="or">or</string>
+    <string name="fill_in">Fill in</string>
+    <string name="_2_select_the_material_">2) Select the material:</string>
+    <string name="_3_fill_in_the_lenght_of_the_beam_">3) Fill in the lenght of the beam:</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="critical_force_for_your_beam_">Critical force for your beam:</string>
+    <string name="no_result_for_this_beam">no result for this beam</string>
 
 </resources>

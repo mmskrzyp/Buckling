@@ -5,93 +5,95 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tvFormStep1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="1) Select the type of fastening the beam:"
+        android:text="@string/_1_select_the_type_of_fastening_the_beam_"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/llFormStep1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="10dp" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/btFormStep1Select"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select" />
+            android:text="@string/select" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvOr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="or"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp" />
+            android:paddingRight="10dp"
+            android:text="@string/or" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btFormStep1FillIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fill in" />
-
+            android:text="@string/fill_in" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvFormStep2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="2) Select the material:"
+        android:text="@string/_2_select_the_material_"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-    
+
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/llFormStep2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="10dp" >
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btFormStep2Select"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select" />
+            android:text="@string/select" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@id/tvOr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="or"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp" />
+            android:paddingRight="10dp"
+            android:text="@string/or" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btFormStep2FillIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fill in" />
-
+            android:text="@string/fill_in" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvFormStep3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="3) Fill in the lenght of the beam:"
+        android:text="@string/_3_fill_in_the_lenght_of_the_beam_"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/etFormStep3Lenght"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:layout_margin="10dp" >
+        android:layout_margin="10dp"
+        android:inputType="numberDecimal" />
 
-        <requestFocus />
-    </EditText>
+    <Button
+        android:id="@+id/btCalculate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/calculate" />
 
 </LinearLayout>

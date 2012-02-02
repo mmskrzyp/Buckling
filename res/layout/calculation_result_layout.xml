@@ -5,19 +5,19 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/tvMainMenuItem1"
+        android:id="@+id/tvResultLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="@string/learn_about_buckling_beam"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="@string/critical_force_for_your_beam_"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/tvMainMenuItem2"
+        android:id="@+id/tvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="@string/no_result_for_this_beam"
         android:padding="10dp"
-        android:text="@string/calculate_the_critical_force_for_the_beam"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </LinearLayout>

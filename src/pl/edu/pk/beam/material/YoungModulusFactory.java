@@ -1,6 +1,7 @@
 package pl.edu.pk.beam.material;
 
 import java.math.BigDecimal;
+import pl.edu.pk.buckling.R;
 
 public abstract class YoungModulusFactory {
     private static final Material[] materialsArray = {
