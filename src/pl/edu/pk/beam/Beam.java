@@ -6,8 +6,9 @@ import pl.edu.pk.beam.fastening.FasteningFactorFactory;
 import pl.edu.pk.beam.material.YoungModulusFactory;
 
 public class Beam {
-    private BigDecimal momentOfInteria;
     private BigDecimal lenght;
+    private BigDecimal mass;
+    // TODO pozosta³e wymiary potrzebne do liczenia momentu bezwladnosci
     
     private final int materialId = 0; // jeden z gotowych materia³ów
     private BigDecimal youngModule; // rêcznie wpisany modu³ Younga
@@ -24,9 +25,14 @@ public class Beam {
 		.getAlpha(fasteningId));
 	
 	return YoungModulusFactory.getYoungModule(materialId)
-		.multiply(momentOfInteria)
+		.multiply(getMomentOfInteria())
 		.multiply(BigDecimal.valueOf(Math.PI * Math.PI))
 		.divide(lenghtReduced.multiply(lenghtReduced));
+    }
+    
+    private BigDecimal getMomentOfInteria(){
+	// TODO
+	return null;
     }
 
 }
