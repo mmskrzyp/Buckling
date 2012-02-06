@@ -1,7 +1,6 @@
 package pl.edu.pk.beam.material;
 
 import java.math.BigDecimal;
-import pl.edu.pk.buckling.R;
 
 public class Material {
     private BigDecimal youngModule;

@@ -89,6 +89,39 @@
         android:layout_margin="10dp"
         android:inputType="numberDecimal" />
 
+    <TextView
+        android:id="@+id/tvFormStep4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/_4_fill_in_the_beam_cross_section_radius"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/etFormStep4Radius"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tvFormStep5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/_5_fill_in_the_beam_mass_"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/etFormStep5Mass"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:inputType="numberDecimal" />
+
     <Button
         android:id="@+id/btCalculate"
         android:layout_width="fill_parent"

@@ -4,36 +4,52 @@ import java.math.BigDecimal;
 
 import pl.edu.pk.beam.fastening.FasteningFactorFactory;
 import pl.edu.pk.beam.material.YoungModulusFactory;
-import pl.edu.pk.buckling.R;
 
 public class Beam {
     private BigDecimal lenght;
     private BigDecimal mass;
-    // TODO pozosta³e wymiary potrzebne do liczenia momentu bezwladnosci
-
-    private final int materialId = 0; // jeden z gotowych materia³ów
+    private BigDecimal radius;
     private BigDecimal youngModule; // rêcznie wpisany modu³ Younga
-
-    private int fasteningId; // jedno z gotowych zamocowañ
     private BigDecimal fasteningFactor; // rêcznie wpisana alpha dla zamocowania
 
-    public Beam(/* tutaj wszystkie wymagane pola ^ */) {
-	// TODO inicjalizacja obiektu
+    public Beam(BigDecimal lenght, BigDecimal radius, BigDecimal mass,
+	    BigDecimal youngModule, BigDecimal fasteningFactor) {
+	this.lenght = lenght;
+	this.radius = radius;
+	this.mass = mass;
+	this.youngModule = youngModule;
+	this.fasteningFactor = fasteningFactor;
+    }
+
+    public Beam(BigDecimal lenght, BigDecimal radius, BigDecimal mass,
+	    int materialId, BigDecimal fasteningFactor) {
+	this(lenght, radius, mass, YoungModulusFactory
+		.getYoungModule(materialId), fasteningFactor);
+    }
+
+    public Beam(BigDecimal lenght, BigDecimal radius, BigDecimal mass,
+	    BigDecimal youngModule, int fasteningId) {
+	this(lenght, radius, mass, youngModule, FasteningFactorFactory
+		.getAlpha(fasteningId));
+    }
+
+    public Beam(BigDecimal lenght, BigDecimal radius, BigDecimal mass,
+	    int materialId, int fasteningId) {
+	this(lenght, radius, mass, YoungModulusFactory
+		.getYoungModule(materialId), FasteningFactorFactory
+		.getAlpha(fasteningId));
     }
 
     public BigDecimal getCriticalPower() {
-	BigDecimal lenghtReduced = lenght.multiply(FasteningFactorFactory
-		.getAlpha(fasteningId));
+	BigDecimal lenghtReduced = lenght.multiply(fasteningFactor);
 
-	return YoungModulusFactory.getYoungModule(materialId)
-		.multiply(getMomentOfInteria())
+	return youngModule.multiply(getMomentOfInteria())
 		.multiply(BigDecimal.valueOf(Math.PI * Math.PI))
 		.divide(lenghtReduced.multiply(lenghtReduced));
     }
 
     private BigDecimal getMomentOfInteria() {
-	// TODO
-	return null;
+	return mass.multiply(radius).multiply(radius);
     }
 
 }

@@ -1,7 +1,6 @@
 package pl.edu.pk.beam.fastening;
 
 import java.math.BigDecimal;
-import pl.edu.pk.buckling.R;
 
 public abstract class FasteningFactorFactory {
     private static final Fastening[] fasteningsArray = {
