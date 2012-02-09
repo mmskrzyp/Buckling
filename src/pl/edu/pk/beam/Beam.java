@@ -1,6 +1,7 @@
 package pl.edu.pk.beam;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import pl.edu.pk.beam.fastening.FasteningFactorFactory;
 import pl.edu.pk.beam.material.YoungModulusFactory;
@@ -43,9 +44,16 @@ public class Beam {
     public BigDecimal getCriticalPower() {
 	BigDecimal lenghtReduced = lenght.multiply(fasteningFactor);
 
-	return youngModule.multiply(getMomentOfInteria())
+	return youngModule
+		.multiply(getMomentOfInteria())
 		.multiply(BigDecimal.valueOf(Math.PI * Math.PI))
-		.divide(lenghtReduced.multiply(lenghtReduced));
+		.divide(lenghtReduced.multiply(lenghtReduced), 3,
+			RoundingMode.HALF_UP); // ustawiamy skale (3), bo przy
+					       // niektorych dzieleniach ogonek
+					       // mo¿e byæ nieskoñczony, a tego
+					       // nie chcemy, jeszcze nam siê
+					       // biedny BigDecimal zapl¹cze
+					       // i bêdzie bubu :(
     }
 
     private BigDecimal getMomentOfInteria() {

@@ -1,132 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:layout_height="fill_parent" >
 
-    <TextView
-        android:id="@+id/tvFormStep1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/_1_select_the_type_of_fastening_the_beam_"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <!-- jestem tu po to zeby nie pojawial sie autofocus na EditTextach
+    	 a także ScrollView może mieć tylko jedno bezpośrednie dzidzi :( -->
 
     <LinearLayout
-        android:id="@+id/llFormStep1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp" >
-
-        <Button
-            android:id="@+id/btFormStep1Select"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/select" />
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/tvOr"
+            android:id="@+id/tvFormStep1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="@string/or" />
+            android:padding="10dp"
+            android:text="@string/_1_select_the_type_of_fastening_the_beam_"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <Button
-            android:id="@+id/btFormStep1FillIn"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/llFormStep1"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/fill_in" />
-    </LinearLayout>
+            android:padding="10dp" >
 
-    <TextView
-        android:id="@+id/tvFormStep2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/_2_select_the_material_"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+            <Button
+                android:id="@+id/btFormStep1Select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select" />
 
-    <LinearLayout
-        android:id="@+id/llFormStep2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp" >
+            <TextView
+                android:id="@+id/tvOr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/or" />
 
-        <Button
-            android:id="@+id/btFormStep2Select"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/select" />
+            <Button
+                android:id="@+id/btFormStep1FillIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fill_in" />
+        </LinearLayout>
 
         <TextView
-            android:id="@id/tvOr"
+            android:id="@+id/tvFormStep2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="@string/or" />
+            android:padding="10dp"
+            android:text="@string/_2_select_the_material_"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <LinearLayout
+            android:id="@+id/llFormStep2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <Button
+                android:id="@+id/btFormStep2Select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select" />
+
+            <TextView
+                android:id="@id/tvOr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/or" />
+
+            <Button
+                android:id="@+id/btFormStep2FillIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fill_in" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFormStep3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/_3_fill_in_the_lenght_of_the_beam_"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/etFormStep3Lenght"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/tvFormStep4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/_4_fill_in_the_beam_cross_section_radius"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/etFormStep4Radius"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/tvFormStep5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/_5_fill_in_the_beam_mass_"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/etFormStep5Mass"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:inputType="numberDecimal" />
 
         <Button
-            android:id="@+id/btFormStep2FillIn"
-            android:layout_width="wrap_content"
+            android:id="@+id/btCalculate"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/fill_in" />
+            android:layout_margin="10dp"
+            android:text="@string/calculate" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvFormStep3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/_3_fill_in_the_lenght_of_the_beam_"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/etFormStep3Lenght"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:inputType="numberDecimal" />
-
-    <TextView
-        android:id="@+id/tvFormStep4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/_4_fill_in_the_beam_cross_section_radius"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/etFormStep4Radius"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:inputType="numberDecimal" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/tvFormStep5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/_5_fill_in_the_beam_mass_"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/etFormStep5Mass"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:inputType="numberDecimal" />
-
-    <Button
-        android:id="@+id/btCalculate"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/calculate" />
-
-</LinearLayout>
+</ScrollView>

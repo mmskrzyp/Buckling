@@ -14,5 +14,6 @@
     <string name="no_result_for_this_beam">no result for this beam</string>
     <string name="_4_fill_in_the_beam_cross_section_radius">4) Fill in the beam cross section radius:</string>
     <string name="_5_fill_in_the_beam_mass_">5) Fill in the beam mass:</string>
+    <string name="ok">Ok</string>
 
 </resources>

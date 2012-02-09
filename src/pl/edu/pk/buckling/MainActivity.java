@@ -14,14 +14,15 @@ public class MainActivity extends Activity {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.main);
 
-	TextView menuItem1 = (TextView) findViewById(R.id.tvMainMenuItem1);
-	// TextView menuItem2 = (TextView) findViewById(R.id.tvMainMenuItem2);
+	//TextView menuItem1 = (TextView) findViewById(R.id.tvMainMenuItem1);
+	TextView menuItem2 = (TextView) findViewById(R.id.tvMainMenuItem2);
 	// TODO dalsze pozycje menu
 
-	menuItem1.setOnClickListener(new OnClickListener() {
+	menuItem2.setClickable(true);
+	menuItem2.setOnClickListener(new OnClickListener() {
 
 	    public void onClick(View v) {
-		startActivity(new Intent(getBaseContext(),
+		startActivity(new Intent(getApplicationContext(),
 			CalculateFormActivity.class));
 	    }
 	});
