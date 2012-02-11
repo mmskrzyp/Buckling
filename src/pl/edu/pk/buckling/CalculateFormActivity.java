@@ -5,23 +5,24 @@ import java.math.BigDecimal;
 import pl.edu.pk.beam.Beam;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-public class CalculateFormActivity extends Activity implements OnClickListener {
+public class CalculateFormActivity extends Activity /*implements OnClickListener*/ {
+    public static final String RESULT = "result";
     private Context context = this;
 
     private EditText etLenght;
     private EditText etRadius;
     private EditText etMass;
 
-    private BigDecimal lenght;
     private BigDecimal fasteningFactor;
     private BigDecimal youngModulus;
 
@@ -35,7 +36,7 @@ public class CalculateFormActivity extends Activity implements OnClickListener {
 	etMass = (EditText) findViewById(R.id.etFormStep5Mass);
 
 	Button btSelectFastening = (Button) findViewById(R.id.btFormStep1Select);
-	btSelectFastening.setOnClickListener(new OnClickListener() {
+	/*btSelectFastening.setOnClickListener(new OnClickListener() {
 
 	    public void onClick(View v) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -43,14 +44,15 @@ public class CalculateFormActivity extends Activity implements OnClickListener {
 		// builder.setItems(items, listener)
 		AlertDialog alert = builder.create();
 	    }
-	});
+	});*/
 
 	Button btFillFasteningFactor = (Button) findViewById(R.id.btFormStep1FillIn);
 	btFillFasteningFactor.setOnClickListener(new OnClickListener() {
 	    public void onClick(View v) {
-		final Dialog dialog = new Dialog(context);
+		/*final Dialog dialog = new Dialog(context);
 		dialog.setContentView(R.layout.fill_in_fastening_factor_dialog);
 		dialog.setTitle("Fill in fastening factor");
+		
 		Button btOk = (Button) findViewById(R.id.btFillFasteningFactor);
 		btOk.setOnClickListener(new OnClickListener() {
 		    public void onClick(View v) {
@@ -59,7 +61,17 @@ public class CalculateFormActivity extends Activity implements OnClickListener {
 					.getText().toString());
 			dialog.cancel();
 		    }
+		});*/
+		final CharSequence[] items = {"Red", "Green", "Blue"};
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setTitle("Pick a color");
+		builder.setItems(items, new DialogInterface.OnClickListener() {
+		    public void onClick(DialogInterface dialog, int item) {
+		        Toast.makeText(getApplicationContext(), items[item], Toast.LENGTH_SHORT).show();
+		    }
 		});
+		AlertDialog alert = builder.create();
 	    }
 	});
 
@@ -67,7 +79,22 @@ public class CalculateFormActivity extends Activity implements OnClickListener {
 	Button btFillYoungModule = (Button) findViewById(R.id.btFormStep2FillIn);
 
 	Button btCalculate = (Button) findViewById(R.id.btCalculate);
-	btCalculate.setOnClickListener(this);
+	//btCalculate.setOnClickListener(this);
+	btCalculate.setOnClickListener(new OnClickListener() {
+	    
+	    public void onClick(View v) {
+		if (isFormValid()) {
+		    Intent intent = new Intent(getBaseContext(),
+			    CalculationResultActivity.class);
+		    intent.putExtra(RESULT, calulateFromForm());
+		    startActivity(intent);
+		} else {
+		    Toast.makeText(context,
+			    "You must fill all fields in order to calculate!",
+			    Toast.LENGTH_SHORT).show();
+		}
+	    }
+	});
     }
 
     private boolean isFormValid() {
@@ -81,23 +108,24 @@ public class CalculateFormActivity extends Activity implements OnClickListener {
 	BigDecimal mass = new BigDecimal(etMass.getText().toString());
 
 	// TODO zamiennie zaleznie od tego co wybrano jako ostatnie,
-	// wpisywanie
-	// czy wybieranie
+	// wpisywanie czy wybieranie
 	// Beam beam = new Beam(lenght, radius, mass, youngModulus,
 	// fasteningFactor); // TODO
-	Beam beam = new Beam(new BigDecimal(3), new BigDecimal(1),
-		new BigDecimal(2), 0, 0); // guma, pierwsze zamocowanie
+	Beam beam = new Beam(lenght, radius, mass, 0, 0);
 
-	BigDecimal result = beam.getCriticalPower();
-	return result;
+	return beam.getCriticalPower();
     }
 
-    public static final String RESULT = "result";
-
-    public void onClick(View v) {
-	Intent intent = new Intent(getBaseContext(),
+    /*public void onClick(View v) {
+	if (isFormValid()) {
+	    Intent intent = new Intent(getBaseContext(),
 		    CalculationResultActivity.class);
 	    intent.putExtra(RESULT, calulateFromForm());
 	    startActivity(intent);
-    }
+	} else {
+	    Toast.makeText(context,
+		    "You must fill all fields in order to calculate!",
+		    Toast.LENGTH_SHORT).show();
+	}
+    }*/
 }
