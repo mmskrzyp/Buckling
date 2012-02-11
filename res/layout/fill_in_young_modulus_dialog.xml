@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <EditText
-        android:id="@+id/etFillFasteningFactor"
+        android:id="@+id/etFillYoungModulus"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -20,14 +20,14 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/btFillFasteningFactorOk"
+            android:id="@+id/btFillYoungModulusOk"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/ok" />
 
         <Button
-            android:id="@+id/btFillFasteningFactorCancel"
+            android:id="@+id/btFillYoungModulusCancel"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

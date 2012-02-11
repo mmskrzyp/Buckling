@@ -36,4 +36,12 @@ public abstract class YoungModulusFactory {
     public static String getNameForId(int materialId) {
 	return materialsArray[materialId].getName();
     }
+    
+    public static CharSequence[] getAllNames(){
+	CharSequence[] namesArray = new CharSequence[materialsArray.length];
+	for(int i=0; i<materialsArray.length; i++){
+	    namesArray[i] = materialsArray[i].getName();
+	}
+	return namesArray;
+    }
 }

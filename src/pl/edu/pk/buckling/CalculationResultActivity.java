@@ -16,7 +16,7 @@ public class CalculationResultActivity extends Activity {
 	Bundle bundle = getIntent().getExtras();
 	BigDecimal result = (BigDecimal) bundle.get(CalculateFormActivity.RESULT);
 	TextView tvResult = (TextView) findViewById(R.id.tvResult);
-	tvResult.setText(result.toString());
+	tvResult.setText(result.toString() + "[N]");
     }
 
 }

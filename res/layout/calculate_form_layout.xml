@@ -3,8 +3,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <!-- jestem tu po to zeby nie pojawial sie autofocus na EditTextach
-    	 a także ScrollView może mieć tylko jedno bezpośrednie dzidzi :( -->
+    <!--
+         jestem tu po to zeby nie pojawial sie autofocus na EditTextach
+    	 a także ScrollView może mieć tylko jedno bezpośrednie dzidzi :(
+    -->
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -27,11 +29,13 @@
             android:layout_height="wrap_content"
             android:padding="10dp" >
 
-            <Button
-                android:id="@+id/btFormStep1Select"
+            <ToggleButton
+                android:id="@+id/tbtFormStep1Select"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/select" />
+                android:checked="false"
+                android:textOff="@string/select"
+                android:textOn="@string/select" />
 
             <TextView
                 android:id="@+id/tvOr"
@@ -41,11 +45,13 @@
                 android:paddingRight="10dp"
                 android:text="@string/or" />
 
-            <Button
-                android:id="@+id/btFormStep1FillIn"
+            <ToggleButton
+                android:id="@+id/tbtFormStep1FillIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fill_in" />
+                android:checked="false"
+                android:textOff="@string/fill_in"
+                android:textOn="@string/fill_in" />
         </LinearLayout>
 
         <TextView
@@ -62,11 +68,13 @@
             android:layout_height="wrap_content"
             android:padding="10dp" >
 
-            <Button
-                android:id="@+id/btFormStep2Select"
+            <ToggleButton
+                android:id="@+id/tbtFormStep2Select"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/select" />
+                android:checked="false"
+                android:textOff="@string/select"
+                android:textOn="@string/select" />
 
             <TextView
                 android:id="@id/tvOr"
@@ -76,11 +84,13 @@
                 android:paddingRight="10dp"
                 android:text="@string/or" />
 
-            <Button
-                android:id="@+id/btFormStep2FillIn"
+            <ToggleButton
+                android:id="@+id/tbtFormStep2FillIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fill_in" />
+                android:checked="false"
+                android:textOff="@string/fill_in"
+                android:textOn="@string/fill_in" />
         </LinearLayout>
 
         <TextView

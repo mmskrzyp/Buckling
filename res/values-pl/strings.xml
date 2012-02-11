@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="learn_about_buckling_beam">Dowiedz się więcej na temat wyboczenia belki</string>
+    <string name="wiki_buckling">http://pl.wikipedia.org/wiki/Wyboczenie</string>
+    <string name="calculate_the_critical_force_for_the_beam">Oblicz siłę krytyczną, dla belki</string>
+    <string name="_1_select_the_type_of_fastening_the_beam_">1) Wybierz typ zamocowania belki:</string>
+    <string name="_2_select_the_material_">2) Wybierz materiał:</string>
+    <string name="_3_fill_in_the_lenght_of_the_beam_">3) Wpisz długość belki [m]:</string>
+    <string name="_4_fill_in_the_beam_cross_section_radius">4) Wpisz promień przekroju belki [m]:</string>
+    <string name="_5_fill_in_the_beam_mass_">5) Wpisz masę belki [kg]:</string>
+    <string name="select">Wybierz</string>
+    <string name="or">lub</string>
+    <string name="fill_in">Wpisz</string>
+    <string name="calculate">OBLICZ</string>
+    <string name="critical_force_for_your_beam_">Siła krytyczna dla belki:</string>
+    <string name="no_result_for_this_beam">brak wyniku dla tej belki</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Anuluj</string>
+    <string name="select_fastening">Wybierz zamocowanie</string>
+    <string name="fastening_factor_can_t_be_empty_">Współczynnik zamocowania nie może być pusty!</string>
+    <string name="select_material">Wybierz materiał</string>
+    <string name="fill_in_young_modulus">Wpisz moduł Younga</string>
+    <string name="young_modulus_can_t_be_empty_">Moduł Younga nie może być pusty!</string>
+    <string name="you_must_fill_all_fields_in_order_to_calculate_">Musisz uzupełnić wszystkie pola by obliczyć!</string>
+    <string name="fill_in_fastening_factor">Wpisz współczynnik zamocowania</string>
+    
+</resources>

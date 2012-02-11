@@ -5,10 +5,12 @@ import java.math.BigDecimal;
 public class Fastening {
     private BigDecimal alpha;
     private String description;
+    private int imageId;
     
-    public Fastening(String description, BigDecimal alpha){
+    public Fastening(String description, BigDecimal alpha, int imageId){
 	setDescription(description);
 	setAlpha(alpha);
+	setImageId(imageId);
     }
 
     public BigDecimal getAlpha() {
@@ -25,6 +27,14 @@ public class Fastening {
 
     public void setDescription(String description) {
 	this.description = description;
+    }
+
+    public int getImageId() {
+	return imageId;
+    }
+
+    public void setImageId(int imageId) {
+	this.imageId = imageId;
     }
 
 }
